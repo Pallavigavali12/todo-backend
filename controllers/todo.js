@@ -19,7 +19,7 @@ export const add_todo = async (req, res) => {
     const { task } = req.body;
     const user = req.user;
     if (!task) {
-      return res.status(400).json({ error: "Task is required" });
+      return res.status(400).json({ message: "Task is required" });
     }
 
     const data = await todomodel.create({ task, userid: user[0]._id });
